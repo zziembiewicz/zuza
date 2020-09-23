@@ -27,28 +27,25 @@ $dec = 20; //20
 $hex = 0xB; //11
 echo $hex,'<hr>';
 
-//składnia heredoc
+//składnia heredoc - przetwarza zmienne na wartości
 $name='krystyna';
 $text=<<< ETYKIETA
   imię: $name<br>
 ETYKIETA;
 echo $text;
 
-echo<<< E
-Herdoc 2<br>
-  imię: $name<br>
-
+$surname='Kowal';
+  echo <<< E
+  Nazwisko: $surname<hr>
 E;
 
-//dkładnia nowdoc
-echo<<< 'E'
-nowdoc<br>
-  imię: $name<br>
-
+// składnia nowdoc- nic się nie dzieje, wyświetla to co ma wpisane nie patrząc na to czy to zmienna
+  echo <<< 'E'
+  Nazwisko: $surname<hr>
 E;
 
-$city='poznan';
-echo "nazwa zmiennej: \$city, wartość:$city";
+  $city='Poznań';
+  echo "Nazwa zmiennej: \$city, wartość zmiennej: $city";
 
      ?>
   </body>
