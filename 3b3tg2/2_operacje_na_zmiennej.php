@@ -4,9 +4,9 @@ echo PHP_VERSION, '<br>';
 //echo phpinfo();
 
 $pow=2**8;
-echo $pow;
+echo $pow<br>; //potega
 
-echo 'a', 'b', 'c'; //abc
+echo 'a', 'b', 'c'; //wyswietli a wyswietli b wyswietli c
 echo '<br>';
 echo 'a'. 'b'. 'c';//a+b+c=>abc
 
@@ -34,8 +34,8 @@ if($x==$y) {
 }else{
   echo 'zmienne są różne<br>';
 }
-
-echo gettype($x); //intiger
+$y=2.5;
+echo gettype($x); //intiger -pokazuje typ zmiennej
 echo gettype($y); //double
 
 /*preinkrementacja ++$x
@@ -73,7 +73,7 @@ $test='123abc';
 $test1=0;
 $test2=20;
 
-echo 'typ danych $test', gettype($test);
+echo 'typ danych $test ', gettype($test);
 $x=(int)$test;
 echo "<hr>$x<br>";
 echo 'typ danych $x', gettype($x);
