@@ -1,3 +1,0 @@
-
-druga linia
-345
