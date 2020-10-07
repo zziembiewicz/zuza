@@ -53,11 +53,11 @@ echo "<br>";
 echo 'dlugosc $name1: ',strlen($name1); //7
 echo "<br>";
 
-echo strlen(ltrim($name1)); //6
+echo strlen(ltrim($name1)); //6 //usuwa biale znaki po lewej stronie tekstu
 echo "<br>";
-echo strlen(rtrim($name1)); //5
+echo strlen(rtrim($name1)); //5 //usuwa biale znaki po prawej stronie tekstu
 echo "<br>";
-echo strlen(trim($name1)); //4
+echo strlen(trim($name1)); //4  //usuwa biale znaki po obu stronach tekstu
 echo "<br>";
 
 echo strlen($name1);//7
@@ -69,20 +69,22 @@ echo "<br>";
 //przeszukiwanie ciągów znaków
 $address="Poznań, ul. Polna 2, tel. (61)123-45-67";
 $search=strstr($address, 'tel');
-echo "<br>$search<br>"; //tel. (61)123-45-67
+echo "<br>$search<br>"; //tel. (61)123-45-67    //wyszukuje i wyswietla wszystko od slowa klucz w prawo
 
 $address="Poznań, ul. Polna 2, tel. (61)123-45-67";
 $search=strstr($address, 'tel', true);
 echo '<br>dlugosc zmiennej $search: ',strlen($search); //22 znaki, polskie znaki liczy jak 2
-echo "<br>$search<br>"; //Poznań ul. Polna 2
+echo "<br>$search<br>"; //Poznań ul. Polna 2    //wyszukuje i wyswietla wszystko od slowa klucz w lewo
 
 $address="Poznań, ul. Polna 2, tel. (61)123-45-67";
-$search=stristr($address, 'Tel');
+$search=stristr($address, 'Tel');   // i ignoruje wielkosc liter
 echo "<br>$search<br>"; //tel. (61)123-45-67
 
 echo strstr('zsl@gmail.com','@'); //@gmail.com
-echo strstr('zsl@gmail.com',64); //@gmail.com
+echo "<br>";
+echo strstr('zsl@gmail.com',64); //@gmail.com   //64- małpa w ASCII
+echo "<br>";
 
-$domain=substr(strstr('zsl@gmail.com','@'),1);
+$domain=substr(strstr('zsl@gmail.com','@'),1);    //zrobione tak zeby wyswietlalo sie bez malpy czyli nie wyswietla pierwszego znaku
 echo $domain; //gmail.com
 ?>
