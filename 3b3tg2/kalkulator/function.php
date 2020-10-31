@@ -1,13 +1,13 @@
 <?php
 function sum($x, $y){
-$result = $x + $y;
+return $x + $y;
 }
 function sub($x, $y){
-$result = $x - $y;
+return $x - $y;
 }
 
 function mul($x, $y){
-$result = $x * $y;
+return $x * $y;
 }
 
 function div($x, $y){
@@ -17,7 +17,7 @@ function div($x, $y){
   }
   else
   {
-  $result = $x / $y;
+  return $x / $y;
   }
 }
 

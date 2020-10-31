@@ -28,7 +28,7 @@ table{
      {
        $x = $_POST['x'];
        $y = $_POST['y'];
-     }
+
             switch($_POST["sign"]){
                case 'sum':
                $result=sum($x,$y);
@@ -43,25 +43,27 @@ table{
                $result=div($x,$y);
                break;
                default:
-               $result="select operation";
+                 $result = "select operation";
+               break;
              }
            }
+         }
   ?>
 
     <table>
     <tr><td><div class="baner">Calculator</div></td></tr>
-    <form action="" method="POST">
+    <form  method="POST">
     <tr>
-    <td><input type="number" name="x" value="x" placeholder="x" pattern="[0-9]"></td>
+    <td><input type="number" name="x"  placeholder="x" ></td>
     <td>
     <select name="sign">
     <option value="sum">+</option>
-    <option value="min">-</option>
+    <option value="sub">-</option>
     <option value="mul">*</option>
     <option value="div">/</option>
     </select>
     </td>
-    <td><input type="number" name="y" value="y" placeholder="y" pattern="[0-9]"></td>
+    <td><input type="number" name="y" placeholder="y" ></td>
     <td><input type="submit" name="submit" value="="> </td>
     <td><input type="text" name="result" disabled value= "<?php if(isset ($result)){echo $result;}?>"></td>
 
