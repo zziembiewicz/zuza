@@ -29,9 +29,7 @@ table{
        $x = $_POST['x'];
        $y = $_POST['y'];
      }
-     if (isset($_POST["sign"])){
-            $option=$_POST["sign"];
-             switch ($option){
+            switch($_POST["sign"]){
                case 'sum':
                $result=sum($x,$y);
                break;
@@ -48,7 +46,6 @@ table{
                $result="select operation";
              }
            }
-      }
   ?>
 
     <table>
@@ -68,7 +65,7 @@ table{
     <td><input type="submit" name="submit" value="="> </td>
     <td><input type="text" name="result" disabled value= "<?php if(isset ($result)){echo $result;}?>"></td>
 
-    <tr>
+  </tr>
     </form>
     </table>
 
