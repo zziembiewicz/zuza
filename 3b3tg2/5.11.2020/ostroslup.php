@@ -22,7 +22,7 @@ hr{
     <table>
     <form method="POST">
     <tr>
-    <td><div class="baner">Ostroslup<div></td>
+    <td><div class="baner">Ostrosłup<div></td>
     </tr>
     <tr>
     <td><img src=ostro.jpg></td>
@@ -60,10 +60,10 @@ hr{
     function ostro(){
     if (isset($_POST['a'],$_POST['h'])){
       if (($_POST['a']==''||$_POST['h']=='')){
-          echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
+          echo "<br><h4>Podane dane muszą być liczbami!</h4>";
       }
       else if($_POST['a']<=0 || $_POST['h']<=0){
-            echo "<br><h4>Liczby podane w polach powinny być dodatnei</h4>";
+            echo "<br><h4>Podane liczby powinny być dodatnie</h4>";
         }
         else{
             require_once('./scripts/ostroslup.php');

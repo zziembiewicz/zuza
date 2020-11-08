@@ -22,7 +22,7 @@ hr{
     <table>
     <form method="POST">
     <tr>
-    <td><div class="baner">Szescian<div></td>
+    <td><div class="baner">Sześcian<div></td>
     </tr>
     <tr>
     <td><img src=szescian.jpg></td>
@@ -57,10 +57,10 @@ hr{
     function szesc(){
       if (isset($_POST['a'])){
           if (($_POST['a']=='')){
-              echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
+              echo "<br><h4>Podane dane muszą być liczbami!</h4>";
           }
           else if($_POST['a']<=0){
-            echo "<br><h4>Liczby podane w polach powinny być dodatnie</h4>";
+            echo "<br><h4>Podane liczby powinny być dodatnie</h4>";
         }
         else{
             require_once('./scripts/szescian.php');

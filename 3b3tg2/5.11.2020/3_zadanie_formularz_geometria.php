@@ -19,7 +19,7 @@ table, td{
 <body>
     <table>
     <tr>
-    <td colspan=2><center><div class="baner">Graniastoslupy</div><center></td>
+    <td colspan=2><center><div class="baner">Graniastosłupy</div><center></td>
     </tr>
     <tr>
     <td><a href="prostopadloscian.php"><img src=prosto.jpg></td>

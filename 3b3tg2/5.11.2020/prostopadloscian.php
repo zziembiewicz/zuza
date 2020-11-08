@@ -22,7 +22,7 @@ hr{
     <table>
     <form method="POST">
     <tr>
-    <td><div class="baner">Prostopadloscian<div></td>
+    <td><div class="baner">Prostopadłościan<div></td>
     </tr>
     <tr>
     <td><img src=prosto.jpg></td>
@@ -63,10 +63,10 @@ hr{
     function prost(){
     if (isset($_POST['a'],$_POST['b'], $_POST['c'])){
         if (($_POST['a']==''||$_POST['b']==''||$_POST['c']=='')){
-            echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
+            echo "<br><h4>Podane dane muszą być liczbami!</h4>";
         }
         else if($_POST['a']<=0 || $_POST['b']<=0 || $_POST['c']<=0){
-            echo "<br><h4>Liczby podane w polach powinny być dodatnie</h4>";
+            echo "<br><h4>Podane liczby powinny być dodatnie</h4>";
         }
         else{
             require_once('./scripts/prostopadloscian.php');
