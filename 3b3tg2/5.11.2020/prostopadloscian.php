@@ -60,35 +60,24 @@ hr{
     </form>
     </table>
     <?php
-
     function prost(){
-
     if (isset($_POST['a'],$_POST['b'], $_POST['c'])){
         if (($_POST['a']==''||$_POST['b']==''||$_POST['c']=='')){
             echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
         }
-
         else if($_POST['a']<=0 || $_POST['b']<=0 || $_POST['c']<=0){
             echo "<br><h4>Liczby podane w polach powinny być dodatnie</h4>";
         }
         else{
             require_once('./scripts/prostopadloscian.php');
-
-
         echo '<ul>';
         echo '<li>Pole:'.P_Prost($a,$b,$c).'cm<sup>2</sup></li>';
         echo '<li>Objętość:'.Obj_Prost($a,$b,$c).'cm<sup>3</sup></li>';
         echo '<li>Długość przekątnej:'.Dl_Prost($a,$b,$c).'cm</li>';
         echo '</ul>';
-
-
         }
     }
-
     }
-
-
-
     ?>
 </body>
 </html>

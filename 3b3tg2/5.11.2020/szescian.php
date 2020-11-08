@@ -59,7 +59,6 @@ hr{
           if (($_POST['a']=='')){
               echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
           }
-
           else if($_POST['a']<=0){
             echo "<br><h4>Liczby podane w polach powinny być dodatnie</h4>";
         }
@@ -74,7 +73,6 @@ hr{
         echo '</ul>';
         }
     }}
-
     ?>
 </body>
 </html>

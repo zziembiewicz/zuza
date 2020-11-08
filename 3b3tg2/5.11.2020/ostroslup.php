@@ -62,7 +62,6 @@ hr{
       if (($_POST['a']==''||$_POST['h']=='')){
           echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
       }
-
       else if($_POST['a']<=0 || $_POST['h']<=0){
             echo "<br><h4>Liczby podane w polach powinny być dodatnei</h4>";
         }
