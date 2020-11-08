@@ -20,6 +20,7 @@ hr{
 </head>
 <body>
     <table>
+    <form method="POST">
     <tr>
     <td><div class="baner">Szescian<div></td>
     </tr>
@@ -35,11 +36,12 @@ hr{
     <td><div class="baner">Dane<div></td>
     </tr>
     <tr>
-    <td><input type="number" name="a"  placeholder="a" pattern="[0-9]"></td>
+    <td><input type="number" name="a"  value="<?php echo$_POST['a']?>" placeholder="a" pattern="[0-9]"></td>
     </tr>
     <tr>
     <td><input type="submit" name="oblicz" value="Oblicz"></td>
     </tr>
+    <tr>
     <td>
     <?php
     echo szesc()
@@ -49,32 +51,30 @@ hr{
     <tr>
     <td><a href="3_zadanie_formularz_geometria.php">Powrót do strony głównej</a></td>
     </tr>
-    </form>
+    <form>
     </table>
     <?php
-      function szesc(){
+    function szesc(){
       if (isset($_POST['a'])){
-           if($_POST['a']<=0){
-              echo "<br><h4>Liczby podane w polach powinny być dodatnie</h4>";
+          if (($_POST['a']=='')){
+              echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
           }
-          else{
-              require_once('./scripts/szescian.php');
 
+          else if($_POST['a']<=0){
+            echo "<br><h4>Liczby podane w polach powinny być dodatnie</h4>";
+        }
+        else{
+            require_once('./scripts/szescian.php');
+        echo '<ul>';
+        echo '<li>Pole:'. Pole_szesc($a).'cm<sup>2</sup></li>';
+        echo '<li>Objętość:'.Obj_szesc($a).'cm<sup>3</sup></li>';
+        echo '<li>Długość przekątnej:'.przek_szesc($a).'cm</li>';
+        echo '<li>Promień kuli wisanej w sześcian: '.r_mal_kul($a).'cm</li>';
+        echo '<li>Promień kuli opisaenej w sześcian: '.r_du_kul($a).'cm</li>';
+        echo '</ul>';
+        }
+    }}
 
-          echo '<ul>';
-          echo '<li>Pole:'.Pole_szescian($a).'cm<sup>2</sup></li>';
-          echo '<li>Objętość:'.Obj_szesc($a).'cm<sup>3</sup></li>';
-          echo '<li>Długość przekątnej:'.d_przek($a).'cm</li>';
-          echo '<li>Promień kuli wpisanej w sześcian:'.r_mal_kul($a).'cm</li>';
-          echo '<li>Promień kuli opisanej na sześcianie:'.r_du_kul($a).'cm</li>';
-          echo '</ul>';
-
-
-          }
-      }
-
-      }
-
-      ?>
-  </body>
-  </html>
+    ?>
+</body>
+</html>

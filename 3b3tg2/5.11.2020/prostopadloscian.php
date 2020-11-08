@@ -36,13 +36,13 @@ hr{
     <td><div class="baner">Dane<div></td>
     </tr>
     <tr>
-    <td><input type="number" name="a"  placeholder="a" pattern="[0-9]"></td>
+    <td><input type="number" name="a"  placeholder="a" value="<?php echo$_POST['a']?>" pattern="[0-9]"></td>
     </tr>
     <tr>
-    <td><input type="number" name="b"  placeholder="b" pattern="[0-9]"></td>
+    <td><input type="number" name="b"  placeholder="b" value="<?php echo$_POST['b']?>" pattern="[0-9]"></td>
     </tr>
     <tr>
-    <td><input type="number" name="c"  placeholder="c" pattern="[0-9]"></td>
+    <td><input type="number" name="c"  placeholder="c" value="<?php echo$_POST['c']?>" pattern="[0-9]"></td>
     </tr>
     <tr>
     <td><input type="submit" name="oblicz" value="Oblicz"></td>
@@ -62,8 +62,13 @@ hr{
     <?php
 
     function prost(){
+
     if (isset($_POST['a'],$_POST['b'], $_POST['c'])){
-         if($_POST['a']<=0||$_POST['b']<=0||$_POST['c']<=0){
+        if (($_POST['a']==''||$_POST['b']==''||$_POST['c']=='')){
+            echo "<br><h4>Dane podane w formularzu muszą być liczbami!</h4>";
+        }
+
+        else if($_POST['a']<=0 || $_POST['b']<=0 || $_POST['c']<=0){
             echo "<br><h4>Liczby podane w polach powinny być dodatnie</h4>";
         }
         else{
@@ -71,9 +76,9 @@ hr{
 
 
         echo '<ul>';
-        echo '<li>Pole:'.Pole_Prosto($a,$b,$c).'cm<sup>2</sup></li>';
-        echo '<li>Objętość:'.Obje_Prosto($a,$b,$c).'cm<sup>3</sup></li>';
-        echo '<li>Długość przekątnej:'.Dlugo_Prosto($a,$b,$c).'cm</li>';
+        echo '<li>Pole:'.P_Prost($a,$b,$c).'cm<sup>2</sup></li>';
+        echo '<li>Objętość:'.Obj_Prost($a,$b,$c).'cm<sup>3</sup></li>';
+        echo '<li>Długość przekątnej:'.Dl_Prost($a,$b,$c).'cm</li>';
         echo '</ul>';
 
 
@@ -81,6 +86,8 @@ hr{
     }
 
     }
+
+
 
     ?>
 </body>
